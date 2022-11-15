@@ -1,0 +1,31 @@
+# pipeline.yaml
+name: pipeline-workflow
+
+# Informo os eventos que serão gatilhos para a minha pipeline
+# Nesse caso será acionada a cada pull request para a main
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Informo os trabalhos que a pipeline irá realizar
+  check: 
+    # Informo o sistema
+    runs-on: ubuntu-latest
+    # Informo as etapas desse trabalho
+    steps:
+      # Clona o repositorio
+      - 
+        name: Clone repo
+        uses: actions/checkout@v3
+      - 
+      # Instala o golang
+        name: Set golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18
+      - 
+      # Executa os testes
+        name: Run tests
+        run: go test -coverprofile=coverage.out
