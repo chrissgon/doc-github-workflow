@@ -4,7 +4,7 @@ package main
 import "testing"
 
 func TestSum(t *testing.T) {
-	expect := 3 // the correct one is 4
+	expect := 4 // the correct one is 4
 	have := sum(2, 2)
 	if expect != have {
 		t.Errorf("expect %d, but have %d", expect, have)
